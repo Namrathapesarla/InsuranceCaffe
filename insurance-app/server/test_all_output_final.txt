@@ -1,0 +1,28 @@
+[india] BLANK /api/policy/amendments/kpis
+[india] BLANK /api/policy/concentration/kpis
+[india] BLANK /api/policy/special-flags/kpis
+[india] ERROR /api/policy/vintage/kpis: function pg_catalog.extract(unknown, text) does not exist
+[india] BLANK /api/policy/term-recon/kpis
+[india] BLANK /api/policy/peril-audit/kpis
+[india] BLANK /api/billing/collection/kpis
+[india] BLANK /api/billing/refund/kpis
+[india] BLANK /api/billing/commission/kpis
+[india] BLANK /api/billing/gl-recon/kpis
+[india] BLANK /api/billing/gst/kpis
+[india] BLANK /api/agent/commission/kpis
+[india] BLANK /api/agent/license/kpis
+[india] BLANK /api/agent/retention/kpis
+[us] BLANK /api/policy/amendments/kpis
+[us] BLANK /api/policy/concentration/kpis
+[us] BLANK /api/policy/special-flags/kpis
+[us] ERROR /api/policy/vintage/kpis: function pg_catalog.extract(unknown, text) does not exist
+[us] BLANK /api/policy/term-recon/kpis
+[us] BLANK /api/policy/peril-audit/kpis
+[us] BLANK /api/billing/collection/kpis
+[us] BLANK /api/billing/refund/kpis
+[us] BLANK /api/billing/commission/kpis
+[us] BLANK /api/billing/gl-recon/kpis
+[us] BLANK /api/billing/gst/kpis
+[us] BLANK /api/agent/commission/kpis
+[us] BLANK /api/agent/license/kpis
+[us] BLANK /api/agent/retention/kpis

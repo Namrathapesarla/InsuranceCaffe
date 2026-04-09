@@ -1,0 +1,15 @@
+Testing policy status...
+[pool:india] Pool initialised → Insurance_CaffeV1."Reporting_IND"
+[
+  {
+    policy_status_description: 'Active/Default',
+    policy_status_code: 'DEFAULT'
+  }
+]
+Testing claim status...
+[
+  {
+    claim_status_description: 'Active/Default',
+    claim_status_code: 'DEFAULT'
+  }
+]

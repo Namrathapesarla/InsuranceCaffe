@@ -1,0 +1,64 @@
+
+── LOCAL ────────────────────────────
+  ✅  /api/dashboard/kpis                           OK
+  ✅  /api/dashboard/lob-distribution               OK
+  ✅  /api/dashboard/claims-by-status               OK
+  ✅  /api/dashboard/recent-policies                OK
+  ✅  /api/dashboard/recent-claims                  OK
+  ✅  /api/dashboard/premium-trend                  OK
+  ✅  /api/production-report/kpis                   OK
+  ✅  /api/production-report/written-premium-by-lob OK
+  ✅  /api/production-report/nb-vs-renewal-trend    OK
+  ✅  /api/uw/renewal/kpis                          OK
+  ✅  /api/uw/profitability/kpis                    OK
+  ✅  /api/uw/cancellation/kpis                     OK
+  ✅  /api/uw/leakage/kpis                          OK
+  ✅  /api/claims/tat/kpis                          OK
+  ✅  /api/claims/fraud/kpis                        OK
+  ✅  /api/claims/reserves/kpis                     OK
+  ✅  /api/claims/repudiation/kpis                  OK
+  ✅  /api/claims/compliance/kpis                   OK
+
+── INDIA ────────────────────────────
+  ✅  /api/dashboard/kpis                           OK
+  ✅  /api/dashboard/lob-distribution               OK
+  ✅  /api/dashboard/claims-by-status               OK
+  ✅  /api/dashboard/recent-policies                OK
+  ✅  /api/dashboard/recent-claims                  OK
+  ✅  /api/dashboard/premium-trend                  OK
+  ✅  /api/production-report/kpis                   OK
+  ✅  /api/production-report/written-premium-by-lob OK
+  ✅  /api/production-report/nb-vs-renewal-trend    OK
+  ✅  /api/uw/renewal/kpis                          OK
+  ✅  /api/uw/profitability/kpis                    OK
+  ✅  /api/uw/cancellation/kpis                     OK
+  ✅  /api/uw/leakage/kpis                          OK
+  ✅  /api/claims/tat/kpis                          OK
+  ✅  /api/claims/fraud/kpis                        OK
+  ✅  /api/claims/reserves/kpis                     OK
+  ✅  /api/claims/repudiation/kpis                  OK
+  ✅  /api/claims/compliance/kpis                   OK
+
+── US ────────────────────────────
+  ✅  /api/dashboard/kpis                           OK
+  ✅  /api/dashboard/lob-distribution               OK
+  ✅  /api/dashboard/claims-by-status               OK
+  ✅  /api/dashboard/recent-policies                OK
+  ✅  /api/dashboard/recent-claims                  OK
+  ✅  /api/dashboard/premium-trend                  OK
+  ✅  /api/production-report/kpis                   OK
+  ✅  /api/production-report/written-premium-by-lob OK
+  ✅  /api/production-report/nb-vs-renewal-trend    OK
+  ✅  /api/uw/renewal/kpis                          OK
+  ✅  /api/uw/profitability/kpis                    OK
+  ✅  /api/uw/cancellation/kpis                     OK
+  ✅  /api/uw/leakage/kpis                          OK
+  ✅  /api/claims/tat/kpis                          OK
+  ✅  /api/claims/fraud/kpis                        OK
+  ✅  /api/claims/reserves/kpis                     OK
+  ✅  /api/claims/repudiation/kpis                  OK
+  ✅  /api/claims/compliance/kpis                   OK
+
+============================================================
+  TOTAL: 54   ✅ PASS: 54   ❌ FAIL: 0
+============================================================

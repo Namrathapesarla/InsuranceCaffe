@@ -1,0 +1,16 @@
+[pool:india] Pool initialised → Insurance_CaffeV1."Reporting_IND"
+dim_line_of_business columns: [
+  'lob_key',
+  '_first_seed',
+  '_last_seed',
+  'line_of_business_description',
+  'line_of_business_code',
+  'line_of_business_group_code',
+  'line_of_business_subcode',
+  'line_of_business_subcode_description',
+  'irdai_lob_segment_cd',
+  'annual_return_form_no',
+  'tariff_applicable_flag',
+  'created_date',
+  'updated_date'
+]

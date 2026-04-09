@@ -1,0 +1,15 @@
+[pool:india] Pool initialised → Insurance_CaffeV1."Reporting_IND"
+[pool:local] Pool initialised → Insurance."reporting"
+Missing remotely: [
+  'dim_agent_extension',
+  'dim_dwelling_fire',
+  'dim_form',
+  'dim_insurable_object_extension',
+  'dim_insurable_object',
+  'dim_rating_territory',
+  'dim_policy_extension',
+  'dim_claim_status',
+  'dim_loss_event',
+  'dim_occurrence',
+  'dim_policy_status'
+]

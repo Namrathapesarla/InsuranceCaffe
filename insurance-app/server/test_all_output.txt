@@ -1,0 +1,28 @@
+[india] ERROR /api/policy/amendments/kpis: column fpt.direct_endorsement_premium does not exist
+[india] ERROR /api/policy/concentration/kpis: column fpt.written_exposures does not exist
+[india] BLANK /api/policy/special-flags/kpis
+[india] ERROR /api/policy/vintage/kpis: function pg_catalog.extract(unknown, text) does not exist
+[india] ERROR /api/policy/term-recon/kpis: column fpt.minimum_earned_premium_amount does not exist
+[india] ERROR /api/policy/peril-audit/kpis: column fpt.coverage_key does not exist
+[india] BLANK /api/billing/collection/kpis
+[india] ERROR /api/billing/refund/kpis: column fpt.reinstated_in_month_indicator does not exist
+[india] BLANK /api/billing/commission/kpis
+[india] BLANK /api/billing/gl-recon/kpis
+[india] BLANK /api/billing/gst/kpis
+[india] BLANK /api/agent/commission/kpis
+[india] BLANK /api/agent/license/kpis
+[india] BLANK /api/agent/retention/kpis
+[us] ERROR /api/policy/amendments/kpis: column fpt.direct_endorsement_premium does not exist
+[us] ERROR /api/policy/concentration/kpis: column fpt.written_exposures does not exist
+[us] BLANK /api/policy/special-flags/kpis
+[us] ERROR /api/policy/vintage/kpis: function pg_catalog.extract(unknown, text) does not exist
+[us] ERROR /api/policy/term-recon/kpis: column fpt.minimum_earned_premium_amount does not exist
+[us] ERROR /api/policy/peril-audit/kpis: column fpt.coverage_key does not exist
+[us] BLANK /api/billing/collection/kpis
+[us] ERROR /api/billing/refund/kpis: column fpt.reinstated_in_month_indicator does not exist
+[us] BLANK /api/billing/commission/kpis
+[us] BLANK /api/billing/gl-recon/kpis
+[us] BLANK /api/billing/gst/kpis
+[us] BLANK /api/agent/commission/kpis
+[us] BLANK /api/agent/license/kpis
+[us] BLANK /api/agent/retention/kpis

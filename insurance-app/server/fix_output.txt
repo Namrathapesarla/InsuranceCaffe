@@ -1,0 +1,117 @@
+(node:36424) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/apply_schema_fixes.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\pesar\OneDrive\Desktop\InsuranceCaffe\insurance-app\server\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[pool:india] Pool initialised ΓåÆ Insurance_CaffeV1."Reporting_IND"
+
+========================================================
+  Fixing INDIA ΓåÆ Reporting_IND
+========================================================
+(node:36424) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+
+Γ£à Fixed (45):
+   + dim_geography.region_name
+   + dim_geography.state_name
+   + dim_account.account_name
+   + dim_coverage.coverage_group
+   + dim_underwriter.full_legal_name
+   + dim_agency.agency_name
+   + fact_policy_measure.policy_measure_key
+   + fact_policy_transaction.book_month_key
+   + fact_policy_transaction.line_of_business_key
+   + fact_policy_transaction.direct_written_premium
+   + fact_policy_transaction.direct_earned_premium
+   + fact_policy_transaction.direct_unearned_premium
+   + fact_policy_transaction.direct_new_business_premium
+   + fact_policy_transaction.direct_renewal_premium
+   + fact_policy_transaction.direct_cancelled_premium
+   + fact_policy_transaction.direct_company_commission
+   + fact_policy_transaction.direct_producer_commission
+   + fact_policy_transaction.direct_surcharges
+   + fact_policy_transaction.direct_taxes
+   + fact_policy_transaction.direct_fees
+   + fact_policy_transaction.net_written_premium
+   + fact_policy_transaction.inforce_indicator
+   + fact_policy_transaction.cancelled_in_month_indicator
+   + fact_policy_transaction.new_or_renewal_code
+   + fact_policy_transaction.policy_number
+   + fact_claim_component.claim_close_date
+   + fact_claim_component.direct_loss_paid
+   + fact_claim_component.direct_loss_reserve
+   + fact_claim_component.direct_loss_reserve_outstanding
+   + fact_claim_component.direct_initial_loss_reserve
+   + fact_claim_component.direct_ibnr_loss_reserve
+   + fact_claim_component.direct_ao_paid
+   + fact_claim_component.direct_dcc_paid
+   + fact_claim_component.direct_medical_paid
+   + fact_claim_component.direct_salvage_received
+   + fact_claim_component.direct_subrogation_received
+   + fact_claim_component.direct_claim_days_open
+   + fact_claim_component.direct_open_claim_count
+   + fact_claim_component.direct_closed_claim_count
+   + fact_claim_component.direct_closed_with_payment_claim_count
+   + fact_claim_component.direct_closed_without_payment_claim_count
+   + fact_claim_component.direct_reopened_claim_count
+   + fact_claim_transaction.book_month_key
+   + fact_claim_transaction.claim_amount
+   + fact_claim_transaction.transaction_type
+
+Done: INDIA
+[pool:us] Pool initialised ΓåÆ Insurance_CaffeV1."Reporting_US"
+
+========================================================
+  Fixing US ΓåÆ Reporting_US
+========================================================
+
+Γ£à Fixed (45):
+   + dim_geography.region_name
+   + dim_geography.state_name
+   + dim_account.account_name
+   + dim_coverage.coverage_group
+   + dim_underwriter.full_legal_name
+   + dim_agency.agency_name
+   + fact_policy_measure.policy_measure_key
+   + fact_policy_transaction.book_month_key
+   + fact_policy_transaction.line_of_business_key
+   + fact_policy_transaction.direct_written_premium
+   + fact_policy_transaction.direct_earned_premium
+   + fact_policy_transaction.direct_unearned_premium
+   + fact_policy_transaction.direct_new_business_premium
+   + fact_policy_transaction.direct_renewal_premium
+   + fact_policy_transaction.direct_cancelled_premium
+   + fact_policy_transaction.direct_company_commission
+   + fact_policy_transaction.direct_producer_commission
+   + fact_policy_transaction.direct_surcharges
+   + fact_policy_transaction.direct_taxes
+   + fact_policy_transaction.direct_fees
+   + fact_policy_transaction.net_written_premium
+   + fact_policy_transaction.inforce_indicator
+   + fact_policy_transaction.cancelled_in_month_indicator
+   + fact_policy_transaction.new_or_renewal_code
+   + fact_policy_transaction.policy_number
+   + fact_claim_component.claim_close_date
+   + fact_claim_component.direct_loss_paid
+   + fact_claim_component.direct_loss_reserve
+   + fact_claim_component.direct_loss_reserve_outstanding
+   + fact_claim_component.direct_initial_loss_reserve
+   + fact_claim_component.direct_ibnr_loss_reserve
+   + fact_claim_component.direct_ao_paid
+   + fact_claim_component.direct_dcc_paid
+   + fact_claim_component.direct_medical_paid
+   + fact_claim_component.direct_salvage_received
+   + fact_claim_component.direct_subrogation_received
+   + fact_claim_component.direct_claim_days_open
+   + fact_claim_component.direct_open_claim_count
+   + fact_claim_component.direct_closed_claim_count
+   + fact_claim_component.direct_closed_with_payment_claim_count
+   + fact_claim_component.direct_closed_without_payment_claim_count
+   + fact_claim_component.direct_reopened_claim_count
+   + fact_claim_transaction.book_month_key
+   + fact_claim_transaction.claim_amount
+   + fact_claim_transaction.transaction_type
+
+Done: US
+
+
+Γ£àΓ£à All schema fixes applied!
+

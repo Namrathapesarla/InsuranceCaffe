@@ -1,0 +1,46 @@
+
+============================================================
+  INDIA — Reporting_IND
+============================================================
+OK: dim_policy_status
+OK: dim_claim_status
+OK: dim_book_month
+OK: dim_policy
+OK: dim_insured
+OK: dim_product
+OK: dim_line_of_business
+OK: dim_agent
+OK: dim_adjuster
+OK: dim_geography
+OK: dim_account
+OK: dim_coverage
+OK: dim_form
+OK: dim_underwriter
+OK: dim_agency
+OK: fact_policy_measure
+OK: fact_policy_transaction
+OK: fact_claim_component
+OK: fact_claim_transaction
+
+============================================================
+  US — Reporting_US
+============================================================
+OK: dim_policy_status
+OK: dim_claim_status
+OK: dim_book_month
+OK: dim_policy
+OK: dim_insured
+OK: dim_product
+OK: dim_line_of_business
+OK: dim_agent
+OK: dim_adjuster
+OK: dim_geography
+OK: dim_account
+OK: dim_coverage
+OK: dim_form
+OK: dim_underwriter
+OK: dim_agency
+OK: fact_policy_measure
+OK: fact_policy_transaction
+OK: fact_claim_component
+OK: fact_claim_transaction

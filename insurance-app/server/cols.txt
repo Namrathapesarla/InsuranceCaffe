@@ -1,0 +1,17 @@
+[pool:india] Pool initialised → Insurance_CaffeV1."Reporting_IND"
+[
+  'book_month_key',
+  '_first_seed',
+  '_last_seed',
+  'BOOK_MONTH',
+  'BOOK_MONTH_YEAR',
+  'BOOK_END_DATE',
+  'BOOK_MONTH_NAME',
+  'BOOK_START_DATE',
+  'BOOK_QUARTER',
+  'BOOK_QUARTER_NAME',
+  'BOOK_YEAR',
+  'IRDAI_REPORTING_PERIOD_FLAG',
+  'created_date',
+  'updated_date'
+]

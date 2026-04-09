@@ -1,0 +1,161 @@
+
+
+--- SCHEMA: india ---
+[pool:india] Pool initialised → Insurance_CaffeV1."Reporting_IND"
+Policy Statuses: 1
+Book Months: [
+  {
+    book_month_key: '2',
+    _first_seed: null,
+    _last_seed: null,
+    book_month: '2',
+    book_month_year: '1',
+    book_end_date: '2027-04-28',
+    book_month_name: '1',
+    book_start_date: '2022-10-28',
+    book_quarter: '1',
+    book_quarter_name: 'Q1',
+    book_year: '2023',
+    irdai_reporting_period_flag: 'N',
+    created_date: 2026-04-03T21:27:52.609Z,
+    updated_date: 2026-04-03T21:27:52.609Z
+  },
+  {
+    book_month_key: '3',
+    _first_seed: null,
+    _last_seed: null,
+    book_month: '3',
+    book_month_year: '1',
+    book_end_date: '2027-10-28',
+    book_month_name: '6',
+    book_start_date: '2022-12-22',
+    book_quarter: '3',
+    book_quarter_name: 'Q2',
+    book_year: '2024',
+    irdai_reporting_period_flag: 'N',
+    created_date: 2026-04-03T21:27:52.609Z,
+    updated_date: 2026-04-03T21:27:52.609Z
+  },
+  {
+    book_month_key: '4',
+    _first_seed: null,
+    _last_seed: null,
+    book_month: '10',
+    book_month_year: '10',
+    book_end_date: '2027-07-20',
+    book_month_name: '9',
+    book_start_date: '2025-11-22',
+    book_quarter: '1',
+    book_quarter_name: 'Q2',
+    book_year: '2024',
+    irdai_reporting_period_flag: 'Y',
+    created_date: 2026-04-03T21:27:52.609Z,
+    updated_date: 2026-04-03T21:27:52.609Z
+  },
+  {
+    book_month_key: '5',
+    _first_seed: null,
+    _last_seed: null,
+    book_month: '1',
+    book_month_year: '2',
+    book_end_date: '2027-02-21',
+    book_month_name: '1',
+    book_start_date: '2025-08-02',
+    book_quarter: '3',
+    book_quarter_name: 'Q1',
+    book_year: '2022',
+    irdai_reporting_period_flag: 'Y',
+    created_date: 2026-04-03T21:27:52.609Z,
+    updated_date: 2026-04-03T21:27:52.609Z
+  },
+  {
+    book_month_key: '6',
+    _first_seed: null,
+    _last_seed: null,
+    book_month: '7',
+    book_month_year: '5',
+    book_end_date: '2029-02-10',
+    book_month_name: '12',
+    book_start_date: '2025-03-27',
+    book_quarter: '3',
+    book_quarter_name: 'Q1',
+    book_year: '2021',
+    irdai_reporting_period_flag: 'Y',
+    created_date: 2026-04-03T21:27:52.609Z,
+    updated_date: 2026-04-03T21:27:52.609Z
+  }
+]
+Total Paid: { paid: '0.00' }
+
+
+--- SCHEMA: us ---
+[pool:us] Pool initialised → Insurance_CaffeV1."Reporting_US"
+Policy Statuses: 1
+Book Months: [
+  {
+    book_month_key: '1',
+    book_month: '1',
+    book_month_year: '9',
+    book_end_date: '2027-02-26',
+    book_month_name: '12',
+    book_start_date: '2023-12-29',
+    book_quarter: '4',
+    book_quarter_name: 'Q3',
+    book_year: '2023',
+    created_date: 2026-04-04T09:25:06.628Z,
+    updated_date: 2026-04-04T09:25:06.000Z
+  },
+  {
+    book_month_key: '2',
+    book_month: '12',
+    book_month_year: '11',
+    book_end_date: '2026-08-21',
+    book_month_name: '12',
+    book_start_date: '2024-05-22',
+    book_quarter: '1',
+    book_quarter_name: 'Q4',
+    book_year: '2022',
+    created_date: 2026-04-04T09:25:06.628Z,
+    updated_date: 2026-04-04T09:25:06.000Z
+  },
+  {
+    book_month_key: '3',
+    book_month: '4',
+    book_month_year: '3',
+    book_end_date: '2028-05-09',
+    book_month_name: '3',
+    book_start_date: '2023-08-21',
+    book_quarter: '2',
+    book_quarter_name: 'Q4',
+    book_year: '2022',
+    created_date: 2026-04-04T09:25:06.628Z,
+    updated_date: 2026-04-04T09:25:06.000Z
+  },
+  {
+    book_month_key: '4',
+    book_month: '5',
+    book_month_year: '10',
+    book_end_date: '2027-05-22',
+    book_month_name: '10',
+    book_start_date: '2022-06-26',
+    book_quarter: '4',
+    book_quarter_name: 'Q1',
+    book_year: '2021',
+    created_date: 2026-04-04T09:25:06.628Z,
+    updated_date: 2026-04-04T09:25:06.000Z
+  },
+  {
+    book_month_key: '5',
+    book_month: '11',
+    book_month_year: '7',
+    book_end_date: '2026-07-18',
+    book_month_name: '12',
+    book_start_date: '2022-09-02',
+    book_quarter: '2',
+    book_quarter_name: 'Q1',
+    book_year: '2021',
+    created_date: 2026-04-04T09:25:06.628Z,
+    updated_date: 2026-04-04T09:25:06.000Z
+  }
+]
+Total Paid: { paid: '0.00' }

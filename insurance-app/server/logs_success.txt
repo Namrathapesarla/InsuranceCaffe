@@ -1,0 +1,61 @@
+(node:12072) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/run_data_realism_patch.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\pesar\OneDrive\Desktop\InsuranceCaffe\insurance-app\server\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[pool:india] Pool initialised ΓåÆ Insurance_CaffeV1."Reporting_IND"
+
+=== Started executing patch for india ===
+Patching book months...
+(node:12072) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+Inserting standard dimension statuses...
+Status error on india: error: duplicate key value violates unique constraint "dim_policy_status_pkey"
+    at C:\Users\pesar\OneDrive\Desktop\InsuranceCaffe\insurance-app\server\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateDataRealism (file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/run_data_realism_patch.js:31:9)
+    at async run (file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/run_data_realism_patch.js:132:3) {
+  length: 238,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (policy_status_key)=(1) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'Reporting_IND',
+  table: 'dim_policy_status',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'dim_policy_status_pkey',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}
+[pool:us] Pool initialised ΓåÆ Insurance_CaffeV1."Reporting_US"
+
+=== Started executing patch for us ===
+Patching book months...
+Inserting standard dimension statuses...
+Status error on us: error: duplicate key value violates unique constraint "dim_policy_status_pkey"
+    at C:\Users\pesar\OneDrive\Desktop\InsuranceCaffe\insurance-app\server\node_modules\pg-pool\index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async generateDataRealism (file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/run_data_realism_patch.js:31:9)
+    at async run (file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/run_data_realism_patch.js:133:3) {
+  length: 237,
+  severity: 'ERROR',
+  code: '23505',
+  detail: 'Key (policy_status_key)=(1) already exists.',
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: 'Reporting_US',
+  table: 'dim_policy_status',
+  column: undefined,
+  dataType: undefined,
+  constraint: 'dim_policy_status_pkey',
+  file: 'nbtinsert.c',
+  line: '666',
+  routine: '_bt_check_unique'
+}

@@ -1,0 +1,25 @@
+[pool:india] Pool initialised → Insurance_CaffeV1."Reporting_IND"
+dim_claim cols: [
+  'claim_key',
+  '_first_seed',
+  '_last_seed',
+  'claim_closed_date',
+  'claim_opened_date',
+  'claim_reopened_date',
+  'claim_reported_date',
+  'claim_date_of_loss',
+  'at_fault_indicator',
+  'claim_description',
+  'claim_number',
+  'fraud_indicator',
+  'documents_complete_dt',
+  'target_settlement_dt',
+  'actual_settlement_dt',
+  'settlement_delay_days',
+  'interest_applicable_flag',
+  'repudiation_reason_cd',
+  'claim_decision_cd',
+  'cause_of_loss_cd',
+  'created_date',
+  'updated_date'
+]

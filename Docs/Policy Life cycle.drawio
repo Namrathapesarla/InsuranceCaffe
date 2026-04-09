@@ -1,0 +1,79 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram id="insurance-flow" name="Policy Lifecycle">
+    <mxGraphModel dx="1020" dy="496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ph" value="&lt;b&gt;Policyholder&lt;/b&gt;&lt;br&gt;(Customer / Insured)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="60" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" value="&lt;b&gt;Agent&lt;/b&gt;&lt;br&gt;(Sales &amp;amp; Relationship)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="220" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="quote_create" value="&lt;b&gt;Quote Creation&lt;/b&gt;&lt;br&gt;(Initial Pricing)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="370" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="uw" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;b&gt; Underwriting&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(Risk Assessment)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Risk scoring&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Coverage approval&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Rate adjustments&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="335" y="530" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="quote_final" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;b&gt;Quote Finalization&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Final premium&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Terms &amp;amp; conditions&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="335" y="720" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bind" value="&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Bind Policy&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(Policy Inception)&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;- Policy number created&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Coverage activated&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="900" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="pol_mgmt" value="&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Policy Management&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Endorsements&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Renewals&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Cancellations&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Reinstatements&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1070" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="billing" value="&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Billing &amp;amp; Balancing&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Invoice generation&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Payments&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Adjustments&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Refunds&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1280" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="claim_occurs" value="&lt;b&gt;Claim Occurs&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;(Loss / Incident)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1440" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="claims_proc" value="&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Claims Processing&lt;/b&gt;&lt;br&gt;- FNOL&lt;br&gt;- Adjuster assignment&lt;br&gt;- Investigation&lt;br&gt;- Settlement" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1630" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="claim_bal" value="&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;b&gt;Claim Balancing&lt;/b&gt;&lt;br&gt;- Reserves&lt;br&gt;- Recoveries&lt;br&gt;- Subrogation" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1820" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="mgmt_rep" value="&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Management &amp;amp; Reporting&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;- Policy KPIs&lt;br&gt;- Loss ratios&lt;br&gt;- Premium vs Claims&lt;br&gt;- Regulatory reporting&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=16;spacingTop=10;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="330" y="1990" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="Applies for insurance /&#xa;Requests quote" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="ph" target="agent" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Collects risk details,&#xa;coverage needs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="agent" target="quote_create" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Sends submission&#xa;for evaluation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="quote_create" target="uw" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Approved / Referred / Rejected" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="uw" target="quote_final" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="Policyholder accepts quote" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="quote_final" target="bind" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="bind" target="pol_mgmt" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="Premium due / adjustments" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="pol_mgmt" target="billing" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="billing" target="claim_occurs" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="Claim reported" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="claim_occurs" target="claims_proc" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="Claim payments issued" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="claims_proc" target="claim_bal" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="claim_bal" target="mgmt_rep" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

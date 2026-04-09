@@ -1,0 +1,178 @@
+(node:12628) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/pesar/OneDrive/Desktop/InsuranceCaffe/insurance-app/server/test_endpoints.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\pesar\OneDrive\Desktop\InsuranceCaffe\insurance-app\server\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ΓöÇΓöÇ LOCAL ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+  Γ¥î  /api/dashboard/kpis                           HTTP 0
+  Γ¥î  /api/dashboard/lob-distribution               HTTP 0
+  Γ¥î  /api/dashboard/claims-by-status               HTTP 0
+  Γ¥î  /api/dashboard/recent-policies                HTTP 0
+  Γ¥î  /api/dashboard/recent-claims                  HTTP 0
+  Γ¥î  /api/dashboard/premium-trend                  HTTP 0
+  Γ¥î  /api/production-report/kpis                   HTTP 0
+  Γ¥î  /api/production-report/written-premium-by-lob HTTP 0
+  Γ¥î  /api/production-report/nb-vs-renewal-trend    HTTP 0
+  Γ¥î  /api/uw/renewal/kpis                          HTTP 0
+  Γ¥î  /api/uw/profitability/kpis                    HTTP 0
+  Γ¥î  /api/uw/cancellation/kpis                     HTTP 0
+  Γ¥î  /api/uw/leakage/kpis                          HTTP 0
+  Γ¥î  /api/claims/tat/kpis                          HTTP 0
+  Γ¥î  /api/claims/fraud/kpis                        HTTP 0
+  Γ¥î  /api/claims/reserves/kpis                     HTTP 0
+  Γ¥î  /api/claims/repudiation/kpis                  HTTP 0
+  Γ¥î  /api/claims/compliance/kpis                   HTTP 0
+
+ΓöÇΓöÇ INDIA ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+  Γ¥î  /api/dashboard/kpis                           HTTP 0
+  Γ¥î  /api/dashboard/lob-distribution               HTTP 0
+  Γ¥î  /api/dashboard/claims-by-status               HTTP 0
+  Γ¥î  /api/dashboard/recent-policies                HTTP 0
+  Γ¥î  /api/dashboard/recent-claims                  HTTP 0
+  Γ¥î  /api/dashboard/premium-trend                  HTTP 0
+  Γ¥î  /api/production-report/kpis                   HTTP 0
+  Γ¥î  /api/production-report/written-premium-by-lob HTTP 0
+  Γ¥î  /api/production-report/nb-vs-renewal-trend    HTTP 0
+  Γ¥î  /api/uw/renewal/kpis                          HTTP 0
+  Γ¥î  /api/uw/profitability/kpis                    HTTP 0
+  Γ¥î  /api/uw/cancellation/kpis                     HTTP 0
+  Γ¥î  /api/uw/leakage/kpis                          HTTP 0
+  Γ¥î  /api/claims/tat/kpis                          HTTP 0
+  Γ¥î  /api/claims/fraud/kpis                        HTTP 0
+  Γ¥î  /api/claims/reserves/kpis                     HTTP 0
+  Γ¥î  /api/claims/repudiation/kpis                  HTTP 0
+  Γ¥î  /api/claims/compliance/kpis                   HTTP 0
+
+ΓöÇΓöÇ US ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+  Γ¥î  /api/dashboard/kpis                           HTTP 0
+  Γ¥î  /api/dashboard/lob-distribution               HTTP 0
+  Γ¥î  /api/dashboard/claims-by-status               HTTP 0
+  Γ¥î  /api/dashboard/recent-policies                HTTP 0
+  Γ¥î  /api/dashboard/recent-claims                  HTTP 0
+  Γ¥î  /api/dashboard/premium-trend                  HTTP 0
+  Γ¥î  /api/production-report/kpis                   HTTP 0
+  Γ¥î  /api/production-report/written-premium-by-lob HTTP 0
+  Γ¥î  /api/production-report/nb-vs-renewal-trend    HTTP 0
+  Γ¥î  /api/uw/renewal/kpis                          HTTP 0
+  Γ¥î  /api/uw/profitability/kpis                    HTTP 0
+  Γ¥î  /api/uw/cancellation/kpis                     HTTP 0
+  Γ¥î  /api/uw/leakage/kpis                          HTTP 0
+  Γ¥î  /api/claims/tat/kpis                          HTTP 0
+  Γ¥î  /api/claims/fraud/kpis                        HTTP 0
+  Γ¥î  /api/claims/reserves/kpis                     HTTP 0
+  Γ¥î  /api/claims/repudiation/kpis                  HTTP 0
+  Γ¥î  /api/claims/compliance/kpis                   HTTP 0
+
+============================================================
+  TOTAL: 54   Γ£à PASS: 0   Γ¥î FAIL: 54
+============================================================
+
+Failed endpoints:
+  [local] /api/dashboard/kpis
+         
+  [local] /api/dashboard/lob-distribution
+         
+  [local] /api/dashboard/claims-by-status
+         
+  [local] /api/dashboard/recent-policies
+         
+  [local] /api/dashboard/recent-claims
+         
+  [local] /api/dashboard/premium-trend
+         
+  [local] /api/production-report/kpis
+         
+  [local] /api/production-report/written-premium-by-lob
+         
+  [local] /api/production-report/nb-vs-renewal-trend
+         
+  [local] /api/uw/renewal/kpis
+         
+  [local] /api/uw/profitability/kpis
+         
+  [local] /api/uw/cancellation/kpis
+         
+  [local] /api/uw/leakage/kpis
+         
+  [local] /api/claims/tat/kpis
+         
+  [local] /api/claims/fraud/kpis
+         
+  [local] /api/claims/reserves/kpis
+         
+  [local] /api/claims/repudiation/kpis
+         
+  [local] /api/claims/compliance/kpis
+         
+  [india] /api/dashboard/kpis
+         
+  [india] /api/dashboard/lob-distribution
+         
+  [india] /api/dashboard/claims-by-status
+         
+  [india] /api/dashboard/recent-policies
+         
+  [india] /api/dashboard/recent-claims
+         
+  [india] /api/dashboard/premium-trend
+         
+  [india] /api/production-report/kpis
+         
+  [india] /api/production-report/written-premium-by-lob
+         
+  [india] /api/production-report/nb-vs-renewal-trend
+         
+  [india] /api/uw/renewal/kpis
+         
+  [india] /api/uw/profitability/kpis
+         
+  [india] /api/uw/cancellation/kpis
+         
+  [india] /api/uw/leakage/kpis
+         
+  [india] /api/claims/tat/kpis
+         
+  [india] /api/claims/fraud/kpis
+         
+  [india] /api/claims/reserves/kpis
+         
+  [india] /api/claims/repudiation/kpis
+         
+  [india] /api/claims/compliance/kpis
+         
+  [us] /api/dashboard/kpis
+         
+  [us] /api/dashboard/lob-distribution
+         
+  [us] /api/dashboard/claims-by-status
+         
+  [us] /api/dashboard/recent-policies
+         
+  [us] /api/dashboard/recent-claims
+         
+  [us] /api/dashboard/premium-trend
+         
+  [us] /api/production-report/kpis
+         
+  [us] /api/production-report/written-premium-by-lob
+         
+  [us] /api/production-report/nb-vs-renewal-trend
+         
+  [us] /api/uw/renewal/kpis
+         
+  [us] /api/uw/profitability/kpis
+         
+  [us] /api/uw/cancellation/kpis
+         
+  [us] /api/uw/leakage/kpis
+         
+  [us] /api/claims/tat/kpis
+         
+  [us] /api/claims/fraud/kpis
+         
+  [us] /api/claims/reserves/kpis
+         
+  [us] /api/claims/repudiation/kpis
+         
+  [us] /api/claims/compliance/kpis
+         

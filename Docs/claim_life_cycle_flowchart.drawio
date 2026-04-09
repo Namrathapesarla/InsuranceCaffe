@@ -1,0 +1,152 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Insurance Claim Flow" id="claim-flow-light">
+    <mxGraphModel dx="1020" dy="496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Insurance Claim Process Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#2d3436;" parent="1" vertex="1">
+          <mxGeometry x="200" y="20" width="700" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="start" value="START" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dfe6e9;strokeColor=#636e72;fontColor=#2d3436;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="80" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fnol" value="&lt;b&gt;3.1 First Notice of Loss (FNOL)&lt;/b&gt;&lt;br&gt;Claimant reports incident via phone,&lt;br&gt;web, mobile app, or agent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="170" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="coverage" value="&lt;b&gt;3.2 Coverage Verification&lt;/b&gt;&lt;br&gt;Verify policy status, coverage type,&lt;br&gt;deductibles &amp; limits" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="280" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="coverageCheck" value="Coverage&lt;br&gt;Valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#fbbf24;fontColor=#78350f;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="390" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="deny" value="&lt;b&gt;Deny Claim&lt;/b&gt;&lt;br&gt;Notify claimant&lt;br&gt;with reason" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#fca5a5;fontColor=#7f1d1d;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="720" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="assignment" value="&lt;b&gt;3.3 Claim Assignment&lt;/b&gt;&lt;br&gt;Assign adjuster based on claim type,&lt;br&gt;complexity &amp; workload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="510" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="investigation" value="&lt;b&gt;3.4 Investigation &amp; Assessment&lt;/b&gt;&lt;br&gt;Gather evidence, inspect damage,&lt;br&gt;interview witnesses, review docs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="620" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fraudCheck" value="Fraud&lt;br&gt;Suspected?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#fbbf24;fontColor=#78350f;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="730" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="siu" value="&lt;b&gt;SIU Referral&lt;/b&gt;&lt;br&gt;Special Investigations&lt;br&gt;Unit Review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#fca5a5;fontColor=#7f1d1d;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="720" y="740" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="reserve" value="&lt;b&gt;3.5 Reserve Management&lt;/b&gt;&lt;br&gt;Set initial reserves, adjust as&lt;br&gt;new information emerges" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="850" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" value="&lt;b&gt;3.6 Claim Decision&lt;/b&gt;&lt;br&gt;Evaluate liability, approve or&lt;br&gt;deny based on findings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="960" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="approvalCheck" value="Claim&lt;br&gt;Approved?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#fbbf24;fontColor=#78350f;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="1070" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dispute" value="&lt;b&gt;Dispute / Appeal&lt;/b&gt;&lt;br&gt;Claimant notified,&lt;br&gt;appeal process offered" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#fca5a5;fontColor=#7f1d1d;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="720" y="1080" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="settlement" value="&lt;b&gt;3.7 Settlement &amp; Payments&lt;/b&gt;&lt;br&gt;Calculate payout, issue payment&lt;br&gt;to claimant or repair vendor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="1190" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="closure" value="&lt;b&gt;3.8 Claim Closure&lt;/b&gt;&lt;br&gt;Document findings, close file,&lt;br&gt;update records &amp; analytics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#93c5fd;fontColor=#1e3a5f;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="375" y="1300" width="270" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="END" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dfe6e9;strokeColor=#636e72;fontColor=#2d3436;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1410" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subrogation" value="&lt;b&gt;Subrogation Review&lt;/b&gt;&lt;br&gt;Identify recovery&lt;br&gt;opportunities" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#86efac;fontColor=#14532d;fontSize=12;arcSize=10;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="start" target="fnol" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="fnol" target="coverage" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="coverage" target="coverageCheck" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;fontSize=11;strokeColor=#16a34a;fontColor=#16a34a;" parent="1" source="coverageCheck" target="assignment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="No" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;fontSize=11;strokeColor=#dc2626;fontColor=#dc2626;" parent="1" source="coverageCheck" target="deny" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5b" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#fca5a5;" parent="1" source="deny" target="end" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="800" y="1435" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="assignment" target="investigation" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="investigation" target="fraudCheck" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="No" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;fontSize=11;strokeColor=#16a34a;fontColor=#16a34a;" parent="1" source="fraudCheck" target="reserve" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;fontSize=11;strokeColor=#dc2626;fontColor=#dc2626;" parent="1" source="fraudCheck" target="siu" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9b" value="Re-investigate" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;fontStyle=2;strokeColor=#fca5a5;fontColor=#dc2626;" parent="1" source="siu" target="investigation" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="770" />
+              <mxPoint x="960" y="655" />
+              <mxPoint x="645" y="655" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="reserve" target="decision" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="decision" target="approvalCheck" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="Yes" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;fontSize=11;strokeColor=#16a34a;fontColor=#16a34a;" parent="1" source="approvalCheck" target="settlement" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="No" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;fontSize=11;strokeColor=#dc2626;fontColor=#dc2626;" parent="1" source="approvalCheck" target="dispute" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13b" value="Appeal" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;fontStyle=2;strokeColor=#fca5a5;fontColor=#dc2626;" parent="1" source="dispute" target="decision" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="1110" />
+              <mxPoint x="960" y="995" />
+              <mxPoint x="645" y="995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="settlement" target="closure" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" value="If applicable" style="edgeStyle=orthogonalEdgeStyle;fontSize=10;fontStyle=2;strokeColor=#86efac;fontColor=#16a34a;" parent="1" source="settlement" target="subrogation" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="1225" />
+              <mxPoint x="240" y="1225" />
+              <mxPoint x="240" y="1330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15b" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#86efac;" parent="1" source="subrogation" target="closure" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="1390" />
+              <mxPoint x="375" y="1390" />
+              <mxPoint x="375" y="1335" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#636e72;" parent="1" source="closure" target="end" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
