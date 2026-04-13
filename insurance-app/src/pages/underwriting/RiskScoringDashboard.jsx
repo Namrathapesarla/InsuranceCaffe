@@ -98,6 +98,9 @@ export default function RiskScoringDashboard() {
     color: UW_COLORS[d.decision] || COLORS[i % COLORS.length],
   }));
 
+  // API returns LOBs ordered by DWP desc; same top 5 for DWP + Loss Ratio by LOB charts
+  const riskByLobTopDwp = riskByLob.slice(0, 5);
+
   // Radar data from LOB
   const radarData = riskByLob.map(r => ({
     lob: r.lob.length > 16 ? r.lob.substring(0, 16) + '..' : r.lob,
@@ -141,10 +144,10 @@ export default function RiskScoringDashboard() {
       {/* ── ROW 1: Risk by LOB + UW Decisions Pie ── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
         <div className="card">
-          <div className="card-header"><h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><BarChart3 size={16} /> DWP & Loss Ratio by LOB</h3></div>
+          <div className="card-header"><h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><BarChart3 size={16} /> DWP & Loss Ratio by LOB <span style={{ fontSize: '0.75rem', fontWeight: 500, color: '#64748b', marginLeft: '0.35rem' }}>(top 5 by DWP)</span></h3></div>
           <div className="card-body">
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={riskByLob} layout="vertical">
+              <BarChart data={riskByLobTopDwp} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis type="number" tickFormatter={F} tick={{ fontSize: 11 }} />
                 <YAxis dataKey="lob" type="category" tick={{ fontSize: 10 }} width={150} />
@@ -175,16 +178,16 @@ export default function RiskScoringDashboard() {
       {/* ── ROW 2: Loss Ratio by LOB bar + Risk by Region table ── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
         <div className="card">
-          <div className="card-header"><h3>Loss Ratio by LOB</h3></div>
+          <div className="card-header"><h3>Loss Ratio by LOB <span style={{ fontSize: '0.75rem', fontWeight: 500, color: '#64748b', marginLeft: '0.35rem' }}>(top 5 by DWP)</span></h3></div>
           <div className="card-body">
             <ResponsiveContainer width="100%" height={280}>
-              <BarChart data={riskByLob}>
+              <BarChart data={riskByLobTopDwp}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="lob" tick={{ fontSize: 9 }} interval={0} angle={-20} textAnchor="end" height={60} />
                 <YAxis unit="%" tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => `${v}%`} />
                 <Bar dataKey="loss_ratio" name="Loss Ratio %" radius={[4, 4, 0, 0]}>
-                  {riskByLob.map((d, i) => (
+                  {riskByLobTopDwp.map((d, i) => (
                     <Cell key={i} fill={Number(d.loss_ratio) > 80 ? '#ef4444' : Number(d.loss_ratio) > 60 ? '#f59e0b' : '#22c55e'} />
                   ))}
                 </Bar>

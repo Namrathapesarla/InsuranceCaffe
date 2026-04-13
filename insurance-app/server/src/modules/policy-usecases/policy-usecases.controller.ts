@@ -296,7 +296,7 @@ export class PolicyUsecasesController {
     const sql = `
       WITH pol AS (
         SELECT fpt.policy_key,
-               (EXTRACT(YEAR FROM NULLIF(TRIM(dp.original_inception_date), '')::timestamp))::int AS inception_year,
+               (EXTRACT(YEAR FROM NULLIF(BTRIM(dp.original_inception_date::text), '')::timestamp))::int AS inception_year,
                fpt.direct_written_premium, fpt.direct_earned_premium,
                fpt.new_or_renewal_code
         FROM reporting.fact_policy_transaction fpt
@@ -333,7 +333,7 @@ export class PolicyUsecasesController {
     const sql = `
       WITH pol AS (
         SELECT fpt.policy_key,
-               COALESCE((EXTRACT(YEAR FROM NULLIF(TRIM(dp.original_inception_date), '')::timestamp))::int, bm.book_year) AS cohort,
+               COALESCE((EXTRACT(YEAR FROM NULLIF(BTRIM(dp.original_inception_date::text), '')::timestamp))::int, bm.book_year) AS cohort,
                fpt.direct_written_premium, fpt.direct_earned_premium,
                fpt.new_or_renewal_code
         FROM reporting.fact_policy_transaction fpt
