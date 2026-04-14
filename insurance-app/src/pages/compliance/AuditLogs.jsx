@@ -1,6 +1,8 @@
 import PageHeader from '../../components/PageHeader';
 import DataTable from '../../components/DataTable';
-import { auditLogs } from '../../data/sampleData';
+import { auditLogs, auditLogsUS } from '../../data/sampleData';
+import { useSchema } from '../../context/SchemaContext';
+import { isReportingUSSchema } from './reportingUsSchema';
 
 const columns = [
   { header: 'Timestamp', accessor: 'timestamp', render: (r) => <span style={{ fontFamily: 'monospace', fontSize: '0.75rem' }}>{r.timestamp}</span> },
@@ -12,11 +14,17 @@ const columns = [
 ];
 
 export default function AuditLogs() {
+  const { selectedSchema, currentOption } = useSchema();
+  const reportingUS = isReportingUSSchema(selectedSchema, currentOption);
+  const rows = reportingUS ? auditLogsUS : auditLogs;
+  const subtitle = reportingUS
+    ? 'Immutable audit trail of all system actions for NAIC, state DOI, and federal (e.g. FinCEN, IRS) compliance'
+    : 'Immutable audit trail of all system actions for IRDAI compliance';
   return (
     <div>
-      <PageHeader title="Audit Logs" subtitle="Immutable audit trail of all system actions for IRDAI compliance"
+      <PageHeader title="Audit Logs" subtitle={subtitle}
         breadcrumbs={[{ label: 'Compliance', path: '/compliance' }, { label: 'Audit Logs' }]} />
-      <DataTable columns={columns} data={auditLogs} />
+      <DataTable columns={columns} data={rows} />
     </div>
   );
 }

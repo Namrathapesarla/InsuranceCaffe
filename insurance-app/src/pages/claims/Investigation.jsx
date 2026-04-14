@@ -31,11 +31,11 @@ export default function Investigation() {
                   <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>{symbol}{c.reserveAmount.toLocaleString(locale)}</div>
                 </div>
               </div>
-              <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem' }}>
+              {/* <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem' }}>
                 <button className="btn btn-primary" style={{ fontSize: '0.75rem', padding: '0.35rem 0.75rem' }}>Update Investigation</button>
                 <button className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.35rem 0.75rem' }}>Request Documents</button>
                 <button className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.35rem 0.75rem' }}>Assign Surveyor</button>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}

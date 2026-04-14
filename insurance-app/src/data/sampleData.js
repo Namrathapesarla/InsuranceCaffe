@@ -136,6 +136,18 @@ export const auditLogs = [
   { id: 8, action: 'Endorsement Processed', module: 'Policy', user: 'operations@insurancecaffe.com', details: 'POL-2024-000006 - 50 employees added to group policy', timestamp: '2024-06-20 15:20:10', ip: '192.168.1.103' },
 ];
 
+/** Audit log sample rows when Reporting_US schema is selected (US regulatory context). */
+export const auditLogsUS = [
+  { id: 1, action: 'Policy Created', module: 'Policy', user: 'admin@insurancecaffe.com', details: 'POL-2024-000001 issued — Personal Auto (full coverage)', timestamp: '2024-06-01 09:15:22', ip: '10.0.1.101' },
+  { id: 2, action: 'Claim Filed', module: 'Claims', user: 'neha.gupta@insurancecaffe.com', details: 'CLM-2024-0002 FNOL — PPO medical hospitalization', timestamp: '2024-09-02 14:30:45', ip: '10.0.1.105' },
+  { id: 3, action: 'KYC Verified', module: 'Compliance', user: 'compliance@insurancecaffe.com', details: 'Party ID 5 — Jane Miller identity verified (CIP / documentary review)', timestamp: '2024-01-28 11:20:00', ip: '10.0.1.102' },
+  { id: 4, action: 'Payment Received', module: 'Billing', user: 'billing@insurancecaffe.com', details: 'INV-2024-0006 — $850,000 received via Fedwire', timestamp: '2024-01-15 16:45:30', ip: '10.0.1.110' },
+  { id: 5, action: 'Claim Denied', module: 'Claims', user: 'vikram.mehta@insurancecaffe.com', details: 'CLM-2024-0007 denied — policy not in force on date of loss', timestamp: '2024-09-25 10:05:12', ip: '10.0.1.107' },
+  { id: 6, action: 'Producer License Updated', module: 'Agent', user: 'admin@insurancecaffe.com', details: 'AGT-006 — NIPR / state license renewed through 2025-03-31', timestamp: '2024-03-15 09:00:00', ip: '10.0.1.101' },
+  { id: 7, action: 'User Role Changed', module: 'Admin', user: 'superadmin@insurancecaffe.com', details: 'User neha.gupta promoted to Senior Claims Adjuster', timestamp: '2024-08-01 08:30:00', ip: '10.0.1.100' },
+  { id: 8, action: 'Endorsement Processed', module: 'Policy', user: 'operations@insurancecaffe.com', details: 'POL-2024-000006 — 50 lives added to group health plan', timestamp: '2024-06-20 15:20:10', ip: '10.0.1.103' },
+];
+
 // ---------- USERS ----------
 export const users = [
   { id: 1, username: 'admin', displayName: 'System Administrator', email: 'admin@insurancecaffe.com', role: 'Super Admin', department: 'IT', status: 'Active', lastLogin: '2024-11-15 09:00:00' },
