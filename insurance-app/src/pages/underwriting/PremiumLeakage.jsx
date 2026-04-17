@@ -29,6 +29,14 @@ export default function PremiumLeakage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatIndiaKpiCurrency = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    return Math.abs(lakhs) >= 100 ? `₹${(n / 10_000_000).toFixed(1)}Cr` : `₹${lakhs.toFixed(1)}L`;
+  };
+
+  const formatKpiCurrency = (value) => currentOption?.key === 'us' ? F(value) : formatIndiaKpiCurrency(value);
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -85,12 +93,12 @@ export default function PremiumLeakage() {
 
       {/* KPIs */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-        <StatCard icon={IndianRupee} label="Written Premium" value={F(kpis.written_premium)} color="#22c55e" />
-        <StatCard icon={Layers} label="Net Written" value={F(kpis.net_written)} color="#3b82f6" />
-        <StatCard icon={TrendingDown} label="Gross-to-Net Gap" value={F(kpis.gross_to_net_gap)} color="#f59e0b" />
+        <StatCard icon={IndianRupee} label="Written Premium" value={formatKpiCurrency(kpis.written_premium)} color="#22c55e" />
+        <StatCard icon={Layers} label="Net Written" value={formatKpiCurrency(kpis.net_written)} color="#3b82f6" />
+        <StatCard icon={TrendingDown} label="Gross-to-Net Gap" value={formatKpiCurrency(kpis.gross_to_net_gap)} color="#f59e0b" />
         <StatCard icon={Percent} label="Leakage %" value={kpis.leakage_pct} suffix="%" color="#ef4444" />
         <StatCard icon={Users} label="Commission Ratio" value={kpis.commission_ratio} suffix="%" color="#8b5cf6" />
-        <StatCard icon={Search} label="Earned Premium" value={F(kpis.earned_premium)} color="#06b6d4" />
+        <StatCard icon={Search} label="Earned Premium" value={formatKpiCurrency(kpis.earned_premium)} color="#06b6d4" />
       </div>
 
       {/* Leakage Signal Cards */}

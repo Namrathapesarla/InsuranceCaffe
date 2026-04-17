@@ -256,23 +256,27 @@ export class DashboardController {
       }
 
       const kimball = `
-        SELECT
-          p.full_policy_number AS policy_number,
-          ins.full_legal_name AS party_name,
-          pr.licensed_product_name AS product_name,
-          lob.line_of_business_description AS lob,
-          ps.policy_status_description AS status,
-          fpm.direct_written_premium AS gross_premium,
-          p.policy_effective_date AS effective_date
-        FROM reporting.fact_policy_measure fpm
-        JOIN reporting.dim_policy p ON fpm.policy_key = p.policy_key
-        JOIN reporting.dim_book_month bm ON fpm.book_month_key = bm.book_month_key
-        LEFT JOIN reporting.dim_insured ins ON fpm.insured_key = ins.insured_key
-        LEFT JOIN reporting.dim_product pr ON fpm.product_key = pr.product_key
-        LEFT JOIN reporting.dim_line_of_business lob ON fpm.line_of_business_key = lob.line_of_business_key
-        LEFT JOIN reporting.dim_policy_status ps ON fpm.policy_status_key = ps.policy_status_key
-        WHERE 1=1 ${dateFilter}
-        ORDER BY p.policy_effective_date DESC NULLS LAST
+        SELECT *
+        FROM (
+          SELECT DISTINCT ON (p.full_policy_number)
+            p.full_policy_number AS policy_number,
+            ins.full_legal_name AS party_name,
+            pr.licensed_product_name AS product_name,
+            lob.line_of_business_description AS lob,
+            ps.policy_status_description AS status,
+            fpt.direct_written_premium AS gross_premium,
+            p.policy_effective_date AS effective_date
+          FROM reporting.fact_policy_transaction fpt
+          JOIN reporting.dim_policy p ON fpt.policy_key = p.policy_key
+          JOIN reporting.dim_book_month bm ON fpt.book_month_key = bm.book_month_key
+          LEFT JOIN reporting.dim_insured ins ON fpt.insured_key = ins.insured_key
+          LEFT JOIN reporting.dim_product pr ON fpt.product_key = pr.product_key
+          LEFT JOIN reporting.dim_line_of_business lob ON fpt.line_of_business_key = lob.line_of_business_key
+          LEFT JOIN reporting.dim_policy_status ps ON fpt.policy_status_key = ps.policy_status_key
+          WHERE 1=1 ${dateFilter}
+          ORDER BY p.full_policy_number, bm.book_end_date DESC NULLS LAST, p.policy_effective_date DESC NULLS LAST
+        ) recent_policies
+        ORDER BY effective_date DESC NULLS LAST
         LIMIT 10
       `;
 

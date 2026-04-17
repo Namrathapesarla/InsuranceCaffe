@@ -8,6 +8,12 @@ function localPoolConfig(): PoolConfig {
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
+    max: parseInt(process.env.DB_POOL_MAX || '4', 10),
+    idleTimeoutMillis: parseInt(process.env.DB_POOL_IDLE_MS || '10000', 10),
+    connectionTimeoutMillis: parseInt(
+      process.env.DB_POOL_CONNECT_TIMEOUT_MS || '5000',
+      10,
+    ),
   };
 }
 
@@ -29,6 +35,15 @@ function remotePoolConfig(): PoolConfig | null {
     user: process.env.REMOTE_DB_USER?.trim() || '',
     password: process.env.REMOTE_DB_PASSWORD || '',
     ssl: sslOff ? undefined : { rejectUnauthorized: false },
+    max: parseInt(process.env.REMOTE_DB_POOL_MAX || '2', 10),
+    idleTimeoutMillis: parseInt(
+      process.env.REMOTE_DB_POOL_IDLE_MS || '10000',
+      10,
+    ),
+    connectionTimeoutMillis: parseInt(
+      process.env.REMOTE_DB_POOL_CONNECT_TIMEOUT_MS || '5000',
+      10,
+    ),
   };
 }
 

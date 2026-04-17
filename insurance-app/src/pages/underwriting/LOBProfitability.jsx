@@ -25,6 +25,14 @@ export default function LOBProfitability() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatIndiaKpiCurrency = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    return Math.abs(lakhs) >= 100 ? `₹${(n / 10_000_000).toFixed(1)}Cr` : `₹${lakhs.toFixed(1)}L`;
+  };
+
+  const formatKpiCurrency = (value) => currentOption?.key === 'us' ? F(value) : formatIndiaKpiCurrency(value);
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -66,12 +74,12 @@ export default function LOBProfitability() {
 
       {/* KPIs */}
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))',gap:'1rem',marginBottom:'1.5rem'}}>
-        <StatCard icon={IndianRupee} label="Earned Premium" value={F(kpis.earned)} color="#22c55e" />
-        <StatCard icon={Layers} label="Unearned Premium" value={F(kpis.unearned)} color="#3b82f6" />
-        <StatCard icon={TrendingDown} label="Incurred Loss" value={F(kpis.incurred)} color="#ef4444" />
+        <StatCard icon={IndianRupee} label="Earned Premium" value={formatKpiCurrency(kpis.earned)} color="#22c55e" />
+        <StatCard icon={Layers} label="Unearned Premium" value={formatKpiCurrency(kpis.unearned)} color="#3b82f6" />
+        <StatCard icon={TrendingDown} label="Incurred Loss" value={formatKpiCurrency(kpis.incurred)} color="#ef4444" />
         <StatCard icon={Percent} label="Loss Ratio" value={kpis.loss_ratio} suffix="%" color="#f59e0b" />
         <StatCard icon={TrendingUp} label="Combined Ratio" value={kpis.combined_ratio} suffix="%" color="#8b5cf6" />
-        <StatCard icon={DollarSign} label="Surcharges + Taxes" value={F(Number(kpis.surcharges) + Number(kpis.taxes))} color="#06b6d4" />
+        <StatCard icon={DollarSign} label="Surcharges + Taxes" value={formatKpiCurrency(Number(kpis.surcharges) + Number(kpis.taxes))} color="#06b6d4" />
       </div>
 
       {/* Row 1: Earned vs Unearned by LOB + Loss Ratio by LOB */}

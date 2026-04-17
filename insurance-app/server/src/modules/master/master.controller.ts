@@ -78,8 +78,42 @@ export class MasterController {
   @Get('locations')
   async locations() {
     try {
-      const kimball = `SELECT * FROM reporting.dim_geography ORDER BY geography_key NULLS LAST LIMIT 500`;
-      const enterprise = `SELECT * FROM reporting.dim_geography ORDER BY geography_sk NULLS LAST LIMIT 500`;
+      const kimball = `
+        WITH geo_rt AS (
+          SELECT DISTINCT ON (fpt.geography_key)
+            fpt.geography_key,
+            fpt.rating_territory_key,
+            fpt.ext_riskcd
+          FROM reporting.fact_policy_transaction fpt
+          WHERE fpt.geography_key IS NOT NULL
+          ORDER BY fpt.geography_key, fpt.direct_written_premium DESC NULLS LAST
+        )
+        SELECT
+          g.*,
+          COALESCE(rt.rating_territory_code, geo_rt.ext_riskcd) AS _ic_ref_risk_zone
+        FROM reporting.dim_geography g
+        LEFT JOIN geo_rt ON geo_rt.geography_key = g.geography_key
+        LEFT JOIN reporting.dim_rating_territory rt ON rt.rating_territory_key = geo_rt.rating_territory_key
+        ORDER BY g.geography_key NULLS LAST
+        LIMIT 500`;
+      const enterprise = `
+        WITH geo_rt AS (
+          SELECT DISTINCT ON (fpt.geography_sk)
+            fpt.geography_sk,
+            fpt.rating_territory_key,
+            fpt.ext_riskcd
+          FROM reporting.fact_policy_transaction fpt
+          WHERE fpt.geography_sk IS NOT NULL
+          ORDER BY fpt.geography_sk, fpt.term_premium_amount DESC NULLS LAST
+        )
+        SELECT
+          g.*,
+          COALESCE(rt.rating_territory_code, geo_rt.ext_riskcd) AS _ic_ref_risk_zone
+        FROM reporting.dim_geography g
+        LEFT JOIN geo_rt ON geo_rt.geography_sk = g.geography_sk
+        LEFT JOIN reporting.dim_rating_territory rt ON rt.rating_territory_key = geo_rt.rating_territory_key
+        ORDER BY g.geography_sk NULLS LAST
+        LIMIT 500`;
       const { rows } = await this.db.queryWarehouse(kimball, enterprise, []);
       return rows.map((r) => this.mapLocation(r as Record<string, unknown>));
     } catch (e) {
@@ -328,12 +362,12 @@ export class MasterController {
         str(this.pick(row, 'geography_name', 'location_name', 'territory_name', 'city_name')) ||
         `Location ${key ?? '?'}`,
       type: str(this.pick(row, 'geography_type', 'location_type', 'geo_type')) || 'Location',
-      city: str(this.pick(row, 'city_name', 'municipality')) || '',
+      city: str(this.pick(row, 'city', 'city_name', 'municipality_name', 'municipality')) || '',
       state: str(this.pick(row, 'state_name', 'state_province_name')) || '',
       region: str(this.pick(row, 'region_name')) || '',
       country: str(this.pick(row, 'country_name', 'country')) || '',
       pincode: str(this.pick(row, 'postal_code', 'zip_code', 'pincode')) || '',
-      riskZone: str(this.pick(row, 'risk_zone_description', 'catastrophe_zone', 'flood_zone')) || '—',
+      riskZone: str(this.pick(row, '_ic_ref_risk_zone', 'risk_zone_description', 'risk_zone_cd', 'territory', 'catastrophe_zone', 'flood_zone', 'flood_zone_cd', 'earthquake_zone_cd', 'irdai_zone_cd', 'rating_territory_code')) || '—',
     };
   }
 

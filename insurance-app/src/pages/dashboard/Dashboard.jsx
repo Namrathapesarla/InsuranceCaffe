@@ -27,6 +27,15 @@ export default function Dashboard() {
   const [years, setYears] = useState([]);
   const [selectedYear, setSelectedYear] = useState(2024);
 
+  const formatIndiaDashboardKpi = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    if (Math.abs(lakhs) >= 1000) {
+      return `₹${(n / 10_000_000).toFixed(1)}Cr`;
+    }
+    return `₹${lakhs.toFixed(1)}L`;
+  };
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -112,7 +121,7 @@ export default function Dashboard() {
 
       {/* KPI Cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
-        <StatCard icon={isUS ? DollarSign : IndianRupee} label={kpis.gwp.label} value={F(kpis.gwp.value)} color="#3b82f6" />
+        <StatCard icon={isUS ? DollarSign : IndianRupee} label={kpis.gwp.label} value={isUS ? F(kpis.gwp.value) : formatIndiaDashboardKpi(kpis.gwp.value)} color="#3b82f6" />
         <StatCard icon={FileText} label={kpis.activePolicies.label} value={kpis.activePolicies.value} color="#22c55e" />
         <StatCard icon={AlertTriangle} label={kpis.openClaims.label} value={kpis.openClaims.value} color="#f59e0b" />
         <StatCard icon={Percent} label={kpis.claimRatio.label} value={kpis.claimRatio.value} suffix="%" color="#ef4444" />
@@ -121,7 +130,7 @@ export default function Dashboard() {
         <StatCard icon={FileText} label={kpis.totalPolicies.label} value={kpis.totalPolicies.value} color="#8b5cf6" />
         <StatCard icon={Clock} label={kpis.avgClaimTAT.label} value={Math.round(kpis.avgClaimTAT.value)} suffix=" days" color="#06b6d4" />
         <StatCard icon={AlertTriangle} label={kpis.totalClaims.label} value={kpis.totalClaims.value} color="#ec4899" />
-        <StatCard icon={isUS ? DollarSign : IndianRupee} label={kpis.totalPaid.label} value={F(kpis.totalPaid.value)} color="#22c55e" />
+        <StatCard icon={isUS ? DollarSign : IndianRupee} label={kpis.totalPaid.label} value={isUS ? F(kpis.totalPaid.value) : formatIndiaDashboardKpi(kpis.totalPaid.value)} color="#22c55e" />
       </div>
 
       {/* Charts Row 1 */}
@@ -163,9 +172,9 @@ export default function Dashboard() {
         <div className="card">
           <div className="card-header"><h3>LOB Distribution</h3></div>
           <div className="card-body" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <ResponsiveContainer width="100%" height={200}>
-              <PieChart>
-                <Pie data={lobData.filter(d => d.value >= 5)} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} innerRadius={0} label={({ name, value }) => `${name.length > 12 ? name.substring(0,12) + '..' : name} ${value}%`}>
+            <ResponsiveContainer width="100%" height={250}>
+              <PieChart margin={{ top: 28, right: 24, bottom: 24, left: 24 }}>
+                <Pie data={lobData.filter(d => d.value >= 5)} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={72} innerRadius={0} label={({ name, value }) => `${name.length > 12 ? name.substring(0,12) + '..' : name} ${value}%`}>
                   {lobData.filter(d => d.value >= 5).map((e, i) => <Cell key={i} fill={e.color} />)}
                 </Pie>
                 <Tooltip formatter={(v, name, props) => [`${v}% (${F(props.payload.premium)})`, name]} />

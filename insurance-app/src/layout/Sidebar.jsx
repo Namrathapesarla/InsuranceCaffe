@@ -133,7 +133,7 @@ const navSections = [
         children: [
           { label: 'Users', path: '/admin/users' },
           { label: 'Roles & Permissions', path: '/admin/roles' },
-          // { label: 'System Settings', path: '/admin/settings' }, // hidden until backend exists
+          { label: 'Settings', path: '/admin/settings' },
         ],
       },
     ],

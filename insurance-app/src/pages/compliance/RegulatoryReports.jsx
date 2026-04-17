@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import PageHeader from '../../components/PageHeader';
-import { ShieldCheck, Users, FileText, IndianRupee, DollarSign, UserCheck, Lock } from 'lucide-react';
+import { ShieldCheck, Users, FileText, IndianRupee, DollarSign, UserCheck, Lock, Plus } from 'lucide-react';
 import { useSchema } from '../../context/SchemaContext';
 import { isReportingUSSchema } from './reportingUsSchema';
 
@@ -162,8 +163,26 @@ const usComplianceAreas = [
 export default function RegulatoryReports() {
   const { selectedSchema, currentOption } = useSchema();
   const reportingUS = isReportingUSSchema(selectedSchema, currentOption);
-  const reports = reportingUS ? reportsUS : reportsIN;
-  const complianceAreas = reportingUS ? usComplianceAreas : irdaiComplianceAreas;
+  const [reports, setReports] = useState(reportingUS ? reportsUS : reportsIN);
+  const [complianceAreas, setComplianceAreas] = useState(reportingUS ? usComplianceAreas : irdaiComplianceAreas);
+  const [showAddCompliance, setShowAddCompliance] = useState(false);
+  const [showAddCalendar, setShowAddCalendar] = useState(false);
+  const [complianceForm, setComplianceForm] = useState({
+    title: '',
+    color: '#3b82f6',
+    itemOne: '',
+    itemTwo: '',
+    itemThree: '',
+  });
+  const [calendarForm, setCalendarForm] = useState({
+    name: '',
+    type: 'Compliance',
+    frequency: 'Monthly',
+    lastSubmitted: '',
+    nextDue: '',
+    regulator: '',
+    status: 'Due Soon',
+  });
   const subtitle = reportingUS
     ? 'NAIC, state department of insurance, and federal (FinCEN, IRS) submission calendar and status tracker'
     : 'IRDAI compliance submissions calendar and status tracker';
@@ -171,10 +190,90 @@ export default function RegulatoryReports() {
     ? 'US Regulatory Compliance — Built Into Every Module'
     : 'IRDAI Compliance — Built Into Every Module';
 
+  useEffect(() => {
+    setReports(reportingUS ? reportsUS : reportsIN);
+    setComplianceAreas(reportingUS ? usComplianceAreas : irdaiComplianceAreas);
+    setShowAddCompliance(false);
+    setShowAddCalendar(false);
+  }, [reportingUS]);
+
+  const updateComplianceForm = (key, value) => {
+    setComplianceForm((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const updateCalendarForm = (key, value) => {
+    setCalendarForm((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleAddCompliance = (e) => {
+    e.preventDefault();
+    const items = [complianceForm.itemOne, complianceForm.itemTwo, complianceForm.itemThree]
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    if (!complianceForm.title.trim() || items.length === 0) return;
+
+    setComplianceAreas((prev) => ([
+      ...prev,
+      {
+        title: complianceForm.title.trim(),
+        icon: FileText,
+        color: complianceForm.color,
+        items,
+      },
+    ]));
+    setComplianceForm({
+      title: '',
+      color: '#3b82f6',
+      itemOne: '',
+      itemTwo: '',
+      itemThree: '',
+    });
+    setShowAddCompliance(false);
+  };
+
+  const handleAddCalendar = (e) => {
+    e.preventDefault();
+    if (!calendarForm.name.trim() || !calendarForm.regulator.trim() || !calendarForm.nextDue) return;
+
+    setReports((prev) => ([
+      ...prev,
+      {
+        id: prev.length ? Math.max(...prev.map((report) => report.id)) + 1 : 1,
+        name: calendarForm.name.trim(),
+        type: calendarForm.type.trim(),
+        frequency: calendarForm.frequency,
+        lastSubmitted: calendarForm.lastSubmitted || 'N/A',
+        nextDue: calendarForm.nextDue,
+        regulator: calendarForm.regulator.trim(),
+        status: calendarForm.status,
+      },
+    ]));
+    setCalendarForm({
+      name: '',
+      type: 'Compliance',
+      frequency: 'Monthly',
+      lastSubmitted: '',
+      nextDue: '',
+      regulator: '',
+      status: 'Due Soon',
+    });
+    setShowAddCalendar(false);
+  };
+
   return (
     <div>
-      <PageHeader title="Regulatory Reports" subtitle={subtitle}
-        breadcrumbs={[{ label: 'Compliance', path: '/compliance' }, { label: 'Reports' }]} />
+      <PageHeader
+        title="Regulatory Reports"
+        subtitle={subtitle}
+        breadcrumbs={[{ label: 'Compliance', path: '/compliance' }, { label: 'Reports' }]}
+        actions={[
+          <button key="add-compliance" className="btn btn-secondary" type="button" onClick={() => setShowAddCompliance(true)}>
+            <Plus size={16} />
+            Add Compliance
+          </button>,
+        ]}
+      />
 
       <div style={{ marginBottom: '1.5rem' }}>
         <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#1e293b' }}>{moduleHeading}</h3>
@@ -206,7 +305,13 @@ export default function RegulatoryReports() {
         </div>
       </div>
 
-      <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.75rem', color: '#1e293b' }}>Regulatory Submission Calendar</h3>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+        <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1e293b', margin: 0 }}>Regulatory Submission Calendar</h3>
+        <button className="btn btn-primary" type="button" onClick={() => setShowAddCalendar(true)}>
+          <Plus size={16} />
+          Add Regulatory Submission Calendar
+        </button>
+      </div>
       <div className="card">
         <table className="data-table">
           <thead><tr><th>Report Name</th><th>Type</th><th>Frequency</th><th>Last Submitted</th><th>Next Due</th><th>Regulator</th><th>Status</th></tr></thead>
@@ -225,6 +330,175 @@ export default function RegulatoryReports() {
           </tbody>
         </table>
       </div>
+
+      {showAddCompliance && (
+        <div className="modal-overlay">
+          <div className="modal" style={{ maxWidth: 620 }}>
+            <div className="modal-header">
+              <h2>Add Compliance</h2>
+              <button className="btn btn-secondary" type="button" onClick={() => setShowAddCompliance(false)}>
+                Close
+              </button>
+            </div>
+            <form onSubmit={handleAddCompliance} className="modal-body" style={{ display: 'grid', gap: '1rem' }}>
+              <label className="form-group" style={{ marginBottom: 0 }}>
+                <span className="form-label">Compliance Title</span>
+                <input
+                  className="form-input"
+                  value={complianceForm.title}
+                  onChange={(e) => updateComplianceForm('title', e.target.value)}
+                  placeholder="Enter compliance title"
+                />
+              </label>
+              <label className="form-group" style={{ marginBottom: 0 }}>
+                <span className="form-label">Accent Color</span>
+                <input
+                  className="form-input"
+                  type="color"
+                  value={complianceForm.color}
+                  onChange={(e) => updateComplianceForm('color', e.target.value)}
+                  style={{ height: '2.75rem', padding: '0.35rem' }}
+                />
+              </label>
+              <label className="form-group" style={{ marginBottom: 0 }}>
+                <span className="form-label">Checklist Item 1</span>
+                <input
+                  className="form-input"
+                  value={complianceForm.itemOne}
+                  onChange={(e) => updateComplianceForm('itemOne', e.target.value)}
+                  placeholder="Enter the first checklist item"
+                />
+              </label>
+              <label className="form-group" style={{ marginBottom: 0 }}>
+                <span className="form-label">Checklist Item 2</span>
+                <input
+                  className="form-input"
+                  value={complianceForm.itemTwo}
+                  onChange={(e) => updateComplianceForm('itemTwo', e.target.value)}
+                  placeholder="Optional"
+                />
+              </label>
+              <label className="form-group" style={{ marginBottom: 0 }}>
+                <span className="form-label">Checklist Item 3</span>
+                <input
+                  className="form-input"
+                  value={complianceForm.itemThree}
+                  onChange={(e) => updateComplianceForm('itemThree', e.target.value)}
+                  placeholder="Optional"
+                />
+              </label>
+              <div className="modal-footer" style={{ padding: 0, borderTop: 'none' }}>
+                <button type="button" className="btn btn-secondary" onClick={() => setShowAddCompliance(false)}>
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn-primary">
+                  Save Compliance
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {showAddCalendar && (
+        <div className="modal-overlay">
+          <div className="modal" style={{ maxWidth: 680 }}>
+            <div className="modal-header">
+              <h2>Add Regulatory Submission Calendar</h2>
+              <button className="btn btn-secondary" type="button" onClick={() => setShowAddCalendar(false)}>
+                Close
+              </button>
+            </div>
+            <form onSubmit={handleAddCalendar} className="modal-body" style={{ display: 'grid', gap: '1rem' }}>
+              <label className="form-group" style={{ marginBottom: 0 }}>
+                <span className="form-label">Report Name</span>
+                <input
+                  className="form-input"
+                  value={calendarForm.name}
+                  onChange={(e) => updateCalendarForm('name', e.target.value)}
+                  placeholder="Enter report name"
+                />
+              </label>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
+                <label className="form-group" style={{ marginBottom: 0 }}>
+                  <span className="form-label">Type</span>
+                  <input
+                    className="form-input"
+                    value={calendarForm.type}
+                    onChange={(e) => updateCalendarForm('type', e.target.value)}
+                    placeholder="Claims / AML / Finance"
+                  />
+                </label>
+                <label className="form-group" style={{ marginBottom: 0 }}>
+                  <span className="form-label">Frequency</span>
+                  <select
+                    className="form-input form-select"
+                    value={calendarForm.frequency}
+                    onChange={(e) => updateCalendarForm('frequency', e.target.value)}
+                  >
+                    <option value="Monthly">Monthly</option>
+                    <option value="Quarterly">Quarterly</option>
+                    <option value="Annual">Annual</option>
+                    <option value="As Needed">As Needed</option>
+                  </select>
+                </label>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
+                <label className="form-group" style={{ marginBottom: 0 }}>
+                  <span className="form-label">Last Submitted</span>
+                  <input
+                    className="form-input"
+                    type="date"
+                    value={calendarForm.lastSubmitted}
+                    onChange={(e) => updateCalendarForm('lastSubmitted', e.target.value)}
+                  />
+                </label>
+                <label className="form-group" style={{ marginBottom: 0 }}>
+                  <span className="form-label">Next Due</span>
+                  <input
+                    className="form-input"
+                    type="date"
+                    value={calendarForm.nextDue}
+                    onChange={(e) => updateCalendarForm('nextDue', e.target.value)}
+                  />
+                </label>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
+                <label className="form-group" style={{ marginBottom: 0 }}>
+                  <span className="form-label">Regulator</span>
+                  <input
+                    className="form-input"
+                    value={calendarForm.regulator}
+                    onChange={(e) => updateCalendarForm('regulator', e.target.value)}
+                    placeholder="Enter regulator"
+                  />
+                </label>
+                <label className="form-group" style={{ marginBottom: 0 }}>
+                  <span className="form-label">Status</span>
+                  <select
+                    className="form-input form-select"
+                    value={calendarForm.status}
+                    onChange={(e) => updateCalendarForm('status', e.target.value)}
+                  >
+                    <option value="Submitted">Submitted</option>
+                    <option value="Due Soon">Due Soon</option>
+                    <option value="On Track">On Track</option>
+                    <option value="No Incidents">No Incidents</option>
+                  </select>
+                </label>
+              </div>
+              <div className="modal-footer" style={{ padding: 0, borderTop: 'none' }}>
+                <button type="button" className="btn btn-secondary" onClick={() => setShowAddCalendar(false)}>
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn-primary">
+                  Save Calendar Entry
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

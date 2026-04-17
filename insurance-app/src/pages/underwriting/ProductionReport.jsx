@@ -34,6 +34,14 @@ export default function ProductionReport() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatIndiaKpiCurrency = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    return Math.abs(lakhs) >= 100 ? `₹${(n / 10_000_000).toFixed(1)}Cr` : `₹${lakhs.toFixed(1)}L`;
+  };
+
+  const formatKpiCurrency = (value) => currentOption?.key === 'us' ? F(value) : formatIndiaKpiCurrency(value);
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -136,7 +144,7 @@ export default function ProductionReport() {
       {/* ── KPI Cards ── */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
         <StatCard icon={ShieldCheck} label="Inforce Policies" value={Number(kpis.inforce_policies).toLocaleString(locale)} color="#3b82f6" />
-        <StatCard icon={IndianRupee} label="Written Premium" value={F(kpis.written_premium)} color="#22c55e" />
+        <StatCard icon={IndianRupee} label="Written Premium" value={formatKpiCurrency(kpis.written_premium)} color="#22c55e" />
         <StatCard icon={FileText} label="New Business Count" value={Number(kpis.new_business_count).toLocaleString(locale)} color="#8b5cf6" />
         <StatCard icon={RefreshCw} label="Renewal Rate" value={kpis.renewal_rate} suffix="%" color="#f59e0b" />
       </div>
@@ -144,7 +152,7 @@ export default function ProductionReport() {
         <StatCard icon={IndianRupee} label="Retention by Premium" value={kpis.retention_by_premium} suffix="%" color="#06b6d4" />
         <StatCard icon={TrendingUp} label="Retention by Count" value={kpis.retention_by_count} suffix="%" color="#14b8a6" />
         <StatCard icon={Percent} label="Loss Ratio" value={kpis.loss_ratio} suffix="%" color="#ef4444" />
-        <StatCard icon={Activity} label="Avg Premium / Policy" value={F(kpis.avg_premium_per_policy)} color="#ec4899" />
+        <StatCard icon={Activity} label="Avg Premium / Policy" value={formatKpiCurrency(kpis.avg_premium_per_policy)} color="#ec4899" />
       </div>
 
       {/* ── Row 1: Written Premium by LOB + Inforce Distribution ── */}
@@ -171,15 +179,15 @@ export default function ProductionReport() {
         <div className="card">
           <div className="card-header"><h3>Inforce Policy Count Distribution</h3></div>
           <div className="card-body" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <ResponsiveContainer width="100%" height={220}>
-              <PieChart>
+            <ResponsiveContainer width="100%" height={250}>
+              <PieChart margin={{ top: 28, right: 24, bottom: 24, left: 24 }}>
                 <Pie
                   data={pieData}
                   dataKey="value"
                   nameKey="name"
                   cx="50%"
                   cy="50%"
-                  outerRadius={85}
+                  outerRadius={72}
                   innerRadius={40}
                   label={({ name, pct }) => `${name.length > 14 ? name.substring(0, 14) + '..' : name} ${pct}%`}
                 >

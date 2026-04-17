@@ -37,6 +37,14 @@ export default function RiskScoringDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatIndiaKpiCurrency = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    return Math.abs(lakhs) >= 100 ? `₹${(n / 10_000_000).toFixed(1)}Cr` : `₹${lakhs.toFixed(1)}L`;
+  };
+
+  const formatKpiCurrency = (value) => currentOption?.key === 'us' ? F(value) : formatIndiaKpiCurrency(value);
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -134,11 +142,11 @@ export default function RiskScoringDashboard() {
       {/* ── KPI CARDS ── */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '1.5rem' }}>
         <StatCard icon={FileText} label="Total Policies" value={Number(kpis.total_policies).toLocaleString(locale)} color="#3b82f6" />
-        <StatCard icon={IndianRupee} label="Total DWP" value={F(kpis.total_dwp)} color="#22c55e" />
+        <StatCard icon={IndianRupee} label="Total DWP" value={formatKpiCurrency(kpis.total_dwp)} color="#22c55e" />
         <StatCard icon={TrendingUp} label="New Business" value={Number(kpis.new_biz).toLocaleString(locale)} color="#8b5cf6" />
         <StatCard icon={CheckCircle} label="Renewals" value={Number(kpis.renewals).toLocaleString(locale)} color="#06b6d4" />
         <StatCard icon={Percent} label="Loss Ratio" value={kpis.loss_ratio} suffix="%" color="#ef4444" />
-        <StatCard icon={Target} label="Avg Premium" value={F(kpis.avg_premium)} color="#f59e0b" />
+        <StatCard icon={Target} label="Avg Premium" value={formatKpiCurrency(kpis.avg_premium)} color="#f59e0b" />
       </div>
 
       {/* ── ROW 1: Risk by LOB + UW Decisions Pie ── */}

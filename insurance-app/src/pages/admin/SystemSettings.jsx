@@ -14,6 +14,15 @@ export default function SystemSettings() {
     auditRetention: '7',
     emailNotifications: true,
     smsNotifications: true,
+    autoDeactivateDays: '45',
+    sessionTimeout: '30',
+    defaultUserRole: 'Operations Analyst',
+    roleApprovalRequired: true,
+    makerCheckerEnabled: true,
+    userImportEnabled: true,
+    passwordResetApproval: true,
+    loginAlertEnabled: true,
+    adminNotesVisibility: 'Admins Only',
   });
 
   const set = (k, v) => setSettings({ ...settings, [k]: v });
@@ -44,6 +53,7 @@ export default function SystemSettings() {
           <div className="card-header"><h3>Security</h3></div>
           <div className="card-body">
             <div className="form-group"><label className="form-label">Password Rotation (days)</label><input className="form-input" type="number" value={settings.passwordPolicy} onChange={(e) => set('passwordPolicy', e.target.value)} /></div>
+            <div className="form-group"><label className="form-label">Session Timeout (minutes)</label><input className="form-input" type="number" value={settings.sessionTimeout} onChange={(e) => set('sessionTimeout', e.target.value)} /></div>
             <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <input type="checkbox" checked={settings.mfaEnabled} onChange={(e) => set('mfaEnabled', e.target.checked)} />
               <label className="form-label" style={{ margin: 0 }}>Enforce Multi-Factor Authentication</label>
@@ -60,6 +70,54 @@ export default function SystemSettings() {
             <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <input type="checkbox" checked={settings.smsNotifications} onChange={(e) => set('smsNotifications', e.target.checked)} />
               <label className="form-label" style={{ margin: 0 }}>SMS Notifications</label>
+            </div>
+            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input type="checkbox" checked={settings.loginAlertEnabled} onChange={(e) => set('loginAlertEnabled', e.target.checked)} />
+              <label className="form-label" style={{ margin: 0 }}>Login Alerts For Admin Actions</label>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-header"><h3>User Administration</h3></div>
+          <div className="card-body">
+            <div className="form-group">
+              <label className="form-label">Default User Role</label>
+              <select className="form-input form-select" value={settings.defaultUserRole} onChange={(e) => set('defaultUserRole', e.target.value)}>
+                <option>Operations Analyst</option>
+                <option>Claims Manager</option>
+                <option>Compliance Officer</option>
+                <option>Admin</option>
+              </select>
+            </div>
+            <div className="form-group"><label className="form-label">Auto-Deactivate Inactive Users (days)</label><input className="form-input" type="number" value={settings.autoDeactivateDays} onChange={(e) => set('autoDeactivateDays', e.target.value)} /></div>
+            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input type="checkbox" checked={settings.userImportEnabled} onChange={(e) => set('userImportEnabled', e.target.checked)} />
+              <label className="form-label" style={{ margin: 0 }}>Allow Bulk User Import</label>
+            </div>
+            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input type="checkbox" checked={settings.passwordResetApproval} onChange={(e) => set('passwordResetApproval', e.target.checked)} />
+              <label className="form-label" style={{ margin: 0 }}>Require Approval For Password Reset</label>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-header"><h3>Role & Approval Governance</h3></div>
+          <div className="card-body">
+            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input type="checkbox" checked={settings.roleApprovalRequired} onChange={(e) => set('roleApprovalRequired', e.target.checked)} />
+              <label className="form-label" style={{ margin: 0 }}>Require Approval Before Role Changes</label>
+            </div>
+            <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <input type="checkbox" checked={settings.makerCheckerEnabled} onChange={(e) => set('makerCheckerEnabled', e.target.checked)} />
+              <label className="form-label" style={{ margin: 0 }}>Enable Maker-Checker For Admin Actions</label>
+            </div>
+            <div className="form-group">
+              <label className="form-label">Admin Notes Visibility</label>
+              <select className="form-input form-select" value={settings.adminNotesVisibility} onChange={(e) => set('adminNotesVisibility', e.target.value)}>
+                <option>Admins Only</option>
+                <option>Admins and Managers</option>
+                <option>All Internal Users</option>
+              </select>
             </div>
           </div>
         </div>

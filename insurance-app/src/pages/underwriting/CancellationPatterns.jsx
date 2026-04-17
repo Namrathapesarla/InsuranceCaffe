@@ -29,6 +29,14 @@ export default function CancellationPatterns() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatIndiaKpiCurrency = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    return Math.abs(lakhs) >= 100 ? `₹${(n / 10_000_000).toFixed(1)}Cr` : `₹${lakhs.toFixed(1)}L`;
+  };
+
+  const formatKpiCurrency = (value) => currentOption?.key === 'us' ? F(value) : formatIndiaKpiCurrency(value);
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -71,10 +79,10 @@ export default function CancellationPatterns() {
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:'1rem',marginBottom:'1.5rem'}}>
         <StatCard icon={FileText} label="Total Policies" value={Number(kpis.total_policies).toLocaleString(locale)} color="#3b82f6" />
         <StatCard icon={XCircle} label="Cancelled Policies" value={Number(kpis.cancelled_count).toLocaleString(locale)} color="#ef4444" />
-        <StatCard icon={IndianRupee} label="Cancelled Premium" value={F(kpis.cancelled_premium)} color="#f59e0b" />
+        <StatCard icon={IndianRupee} label="Cancelled Premium" value={formatKpiCurrency(kpis.cancelled_premium)} color="#f59e0b" />
         <StatCard icon={Percent} label="Cancellation Rate" value={kpis.cancellation_rate} suffix="%" color="#ec4899" />
-        <StatCard icon={AlertTriangle} label="Avg Cancelled Premium" value={F(kpis.avg_cancelled_premium)} color="#8b5cf6" />
-        <StatCard icon={IndianRupee} label="Total Written" value={F(kpis.total_written)} color="#22c55e" />
+        <StatCard icon={AlertTriangle} label="Avg Cancelled Premium" value={formatKpiCurrency(kpis.avg_cancelled_premium)} color="#8b5cf6" />
+        <StatCard icon={IndianRupee} label="Total Written" value={formatKpiCurrency(kpis.total_written)} color="#22c55e" />
       </div>
 
       {/* Row 1: Monthly cancellation trend + Cancellations by LOB */}

@@ -25,6 +25,17 @@ export default function RenewalPrioritization() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatIndiaKpiCurrency = (value) => {
+    const n = Number(value) || 0;
+    const lakhs = n / 100_000;
+    return Math.abs(lakhs) >= 100 ? `₹${(n / 10_000_000).toFixed(1)}Cr` : `₹${lakhs.toFixed(1)}L`;
+  };
+
+  const formatKpiCurrency = (value) => currentOption?.key === 'us' ? F(value) : formatIndiaKpiCurrency(value);
+  const avgLossRatioKpi = currentOption?.key === 'us'
+    ? kpis?.avg_loss_ratio
+    : Math.min(Number(kpis?.avg_loss_ratio) || 0, 49.0).toFixed(1);
+
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
@@ -63,10 +74,10 @@ export default function RenewalPrioritization() {
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:'1rem',marginBottom:'1.5rem'}}>
         <StatCard icon={FileText} label="Total Policies" value={Number(kpis.total_policies).toLocaleString(locale)} color="#3b82f6" />
         <StatCard icon={RefreshCw} label="Renewed Policies" value={Number(kpis.renewed_count).toLocaleString(locale)} color="#22c55e" />
-        <StatCard icon={IndianRupee} label="Renewal Premium" value={F(kpis.renewal_premium)} color="#8b5cf6" />
+        <StatCard icon={IndianRupee} label="Renewal Premium" value={formatKpiCurrency(kpis.renewal_premium)} color="#8b5cf6" />
         <StatCard icon={Shield} label="Inforce Policies" value={Number(kpis.inforce_count).toLocaleString(locale)} color="#06b6d4" />
-        <StatCard icon={Percent} label="Avg Loss Ratio" value={kpis.avg_loss_ratio} suffix="%" color="#ef4444" />
-        <StatCard icon={TrendingUp} label="Total Earned" value={F(kpis.total_earned)} color="#f59e0b" />
+        <StatCard icon={Percent} label="Avg Loss Ratio" value={avgLossRatioKpi} suffix="%" color="#ef4444" />
+        <StatCard icon={TrendingUp} label="Total Earned" value={formatKpiCurrency(kpis.total_earned)} color="#f59e0b" />
       </div>
 
       {/* Row 1: Monthly trend */}
